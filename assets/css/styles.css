@@ -458,8 +458,13 @@ img {
 
 /*==================== SKILLS ====================*/
 .skills__container {
-  row-gap: 0;
+  row-gap: 10;
 }
+
+.skills__content {
+  padding-bottom: 50px;  /* 调整数值以满足你的需求 */
+}
+
 
 .skills__header {
   display: flex;
@@ -495,11 +500,71 @@ img {
 
 }
 
-.skills__list {
+/* .skills__list {
   row-gap: 1.5rem;
   padding-left: 2.7rem;
   transition: .4s;
+} */
+.skills__list {
+  display: flex;
+  gap: 20px; /* 控制技能项之间的间隔 */
+  flex-wrap: wrap; /* 如果技能项太多，允许它们换行 */
 }
+
+.skills__data {
+  flex: 1; /* 使每一项都有相等的宽度 */
+  /* 你可能需要添加其他的样式来进一步控制展示方式 */
+}
+
+.skills__list2 {
+  display: flex;
+  gap: 10px; /* Add space between the cards */
+}
+
+.skills__list-horizontal {
+  display: flex;
+  gap: 15px; /* 或你希望的任何间隔 */
+  align-items: center; /* 如果需要让它们垂直居中 */
+} 
+
+.skill-card {
+  position: relative;
+  width: 150px; /* Set to your desired width */
+  height: 150px; /* Set to your desired height */
+  border: 3px solid #e7cb2e; /* Your custom border color */
+  overflow: hidden;
+}
+
+.skill-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This will make sure your image is scaled properly */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.skill-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 5, 139, 0.575); /* Semi-transparent black */
+  color: #14c6cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.skill-card:hover .skill-text {
+  opacity: 1;
+}
+
+.skill-card:hover .skill-image {
+  opacity: 0.5;
+}
+
 
 .skills__titles {
   display: flex;
@@ -512,56 +577,13 @@ img {
   font-weight: var(--font-medium);
 }
 
-.skills__bar, .skills__percentage {
-  height: 5px;
-  border-radius: .25rem;
-
-}
-
-.skills__bar {
-  background-color: var(--first-color-lighter);
-
-}
-
-.skills__percentage {
-  display: block;
-  background-color: var(--first-color);
-}
-
-.skills__html {
-  width: 60%;
-}
-
-.skills__css{
-  width: 50%;
-}
-
-.skills__js{
-  width: 30%;
-}
-
-.skills__vue{
-  width: 10%;
-}
-
-.skills__java{
-  width: 70%;
-}
-
-.skills__python{
-  width: 50%;
-}
 
 .skills__close .skills__list {
-  
-  height: 0;
-  overflow: hidden;
-
+  display: none;
 }
 
 .skills__open .skills__list {
-  height: max-content;
-  margin-bottom: var(--mb-2-5);
+  display: flex;
 }
 
 .skills__open .skills__arrow {
@@ -1156,4 +1178,35 @@ img {
       grid-template-columns: repeat(2, 1fr);
   }
 }
+
+
+#trailer {
+  height: 30px;
+  width: 30px;
+  /* background-color: white; */
+  background-image: url('../img/dva2.gif');
+  background-size: cover;
+  border-radius: 50%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 10000;
+
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body:hover > #trailer {
+  opacity: 1;
+}
+
+
+#typed-output {
+  color: #e96c7c;
+  font-weight: bold;
+}
+
+
+
 

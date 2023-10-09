@@ -30,23 +30,42 @@ function linkAction(){
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*==================== ACCORDION SKILLS ====================*/
+// const skillsContent = document.getElementsByClassName('skills__content'),
+//       skillsHeader = document.querySelectorAll('.skills__header')
+
+//       function toggleSkills() {
+//         let itemClass = this.parentNode.className
+
+//         for(i = 0; i < skillsContent.length; i++) {
+//           skillsContent[i].className = 'skills__content skills__close'
+//         }
+//         if(itemClass === 'skills__content skills__close'){
+//           this.parentNode.className = 'skills__content skills__open'
+//         }
+//       }
+      
+//       skillsHeader.forEach((el) => {
+//         el.addEventListener('click', toggleSkills)
+//       })
 const skillsContent = document.getElementsByClassName('skills__content'),
       skillsHeader = document.querySelectorAll('.skills__header')
 
-      function toggleSkills() {
-        let itemClass = this.parentNode.className
+function toggleSkills() {
+    let itemClass = this.parentNode.className
 
-        for(i = 0; i < skillsContent.length; i++) {
-          skillsContent[i].className = 'skills__content skills__close'
-        }
-        if(itemClass === 'skills__content skills__close'){
-          this.parentNode.className = 'skills__content skills__open'
-        }
-      }
-      
-      skillsHeader.forEach((el) => {
-        el.addEventListener('click', toggleSkills)
-      })
+    for(let i = 0; i < skillsContent.length; i++) {
+        skillsContent[i].className = 'skills__content skills__close'
+    }
+
+    if(itemClass === 'skills__content skills__close'){
+        this.parentNode.className = 'skills__content skills__open'
+    }
+}
+
+skillsHeader.forEach((el) => {
+    el.addEventListener('click', toggleSkills)
+})
+
 
 /*==================== QUALIFICATION TABS ====================*/
 const tabs = document.querySelectorAll('[data-target]'),
@@ -155,3 +174,57 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+
+
+// const trailer = document.querySelector('trailer');
+// window.addEventListener('mousemove', (e)=>{
+//   // cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+//   cursor.style.left = e.clientX + "px"
+//   cursor.style.top = e.clientY + "px"
+//   cursor.setAttribute("data-fromTop", (cursor.offsetTop - scrollY))
+// })
+
+// window.addEventListener('scroll', ()=>{
+//   //cursor.classList.add("expand");
+//   const fromTop = cursor.getAttribute("data-fromTop");
+//   cursor.style.top = scrollY + fromTop + "px"
+// })
+
+// window.addEventListener('click', ()=>{
+//   if(cursor.classList.contains('click')){
+//     cursor.classList.remove('click');
+//     // Triggering a Dom Reflow
+//     void cursor.offsetWidth;
+//     cursor.classList.add('click');
+//   }else{
+//     cursor.classList.add('click');
+//   }
+// })
+
+
+
+// document.addEventListener("mousemove", (e) => {
+//   const cursor = document.getElementById('cursor');
+//   cursor.style.left = e.clientX + "px";
+//   cursor.style.top = e.clientY + "px";
+//   cursor.setAttribute("data-fromTop", (cursor.offsetTop - scrollY));
+// });
+
+// document.addEventListener("scroll", () => {
+//   const cursor = document.getElementById('cursor');
+//   const fromTop = cursor.getAttribute("data-fromTop");
+//   cursor.style.top = scrollY + fromTop + "px";
+// });
+
+// document.addEventListener("mousedown", () => {
+//   const cursor = document.getElementById('cursor');
+//   if(cursor.classList.contains('click')){
+//     cursor.classList.remove('click');
+//     void cursor.offsetWidth;
+//     cursor.classList.add('click');
+//   }else{
+//     cursor.classList.add('click');
+//   }
+// });
+
