@@ -590,6 +590,41 @@ img {
   transform: rotate(-180deg);
 }
 
+/* soft skills */
+.skill-card2 {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border: 1px solid transparent;
+  background-color: transparent; /* Original color */
+  overflow: hidden;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform to the transition */
+}
+
+.skill-text2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #14c6cc; /* Original text color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.skill-card2:hover {
+  background-color: transparent; /* New color */
+  transform: scale(1.1); /* Scale the element up to 110% */
+}
+
+.skill-card2:hover .skill-text2 {
+  color: #e7cb2e; /* New text color */
+}
+
+
+
 /*==================== QUALIFICATION ====================*/
 .qualification__tabs {
   display: flex;
@@ -699,6 +734,7 @@ img {
 .portfolio__button:hover .button__icon {
   transform: translateX(.25rem);
 }
+
 
 .swiper-button-prev::after, .swiper-button-next::after {
   content: '';
@@ -1162,10 +1198,10 @@ img {
       font-size: 3.5rem;
   }
   .swiper-button-prev {
-      left: 3.5rem;
+      left: -4.5rem;
   }
   .swiper-button-next {
-      right: 3.5rem;
+      right: -4.5rem;
   }
   .swiper-container-horizontal > .swiper-pagination-bullets {
       bottom: -4.5rem
