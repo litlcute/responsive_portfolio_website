@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Responsive Personal Portfolio Website
 
 A seamless, user-centric, and interactive personal portfolio website, crafted meticulously with HTML, CSS, and JavaScript, accessible at [www.yueniu.me](http://www.yueniu.me).
